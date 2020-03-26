@@ -1,0 +1,12 @@
+C:\GITHUB\MoneyManager\MM.Domain\bin\Debug\netcoreapp3.1\MM.Domain.deps.json
+C:\GITHUB\MoneyManager\MM.Domain\bin\Debug\netcoreapp3.1\MM.Domain.dll
+C:\GITHUB\MoneyManager\MM.Domain\bin\Debug\netcoreapp3.1\MM.Domain.pdb
+C:\GITHUB\MoneyManager\MM.Domain\bin\Debug\netcoreapp3.1\MM.Domain.Core.dll
+C:\GITHUB\MoneyManager\MM.Domain\bin\Debug\netcoreapp3.1\MM.Domain.Core.pdb
+C:\GITHUB\MoneyManager\MM.Domain\obj\Debug\netcoreapp3.1\MM.Domain.csprojAssemblyReference.cache
+C:\GITHUB\MoneyManager\MM.Domain\obj\Debug\netcoreapp3.1\MM.Domain.csproj.CoreCompileInputs.cache
+C:\GITHUB\MoneyManager\MM.Domain\obj\Debug\netcoreapp3.1\MM.Domain.AssemblyInfoInputs.cache
+C:\GITHUB\MoneyManager\MM.Domain\obj\Debug\netcoreapp3.1\MM.Domain.AssemblyInfo.cs
+C:\GITHUB\MoneyManager\MM.Domain\obj\Debug\netcoreapp3.1\MM.Domain.csproj.CopyComplete
+C:\GITHUB\MoneyManager\MM.Domain\obj\Debug\netcoreapp3.1\MM.Domain.dll
+C:\GITHUB\MoneyManager\MM.Domain\obj\Debug\netcoreapp3.1\MM.Domain.pdb
