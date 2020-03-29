@@ -31,7 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{C5200CB3-7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{DFE1147E-8A99-45E5-BC62-F50303F3A0CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MM.Infra.Data.Core", "MM.Infra.Data.Core\MM.Infra.Data.Core.csproj", "{4E2FECBF-59F7-4094-9460-AE4137EE64E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MM.Infra.Data.Core", "MM.Infra.Data.Core\MM.Infra.Data.Core.csproj", "{4E2FECBF-59F7-4094-9460-AE4137EE64E3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MM.Infra.Data", "MM.Infra.Data\MM.Infra.Data.csproj", "{3F9B67C2-4A08-4125-9442-3978FC81EF0E}"
 EndProject

@@ -6,6 +6,6 @@ namespace MM.Service.Interface
 {
     public interface IUsuarioService
     {
-        Task<WriteResult> Inserir(Usuario usuario);
+        Task<string> Inserir(Usuario usuario);
     }
 }

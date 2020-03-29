@@ -15,7 +15,7 @@ namespace MM.Service
             _usuarioDB = usuarioDB;
         }
 
-        public Task<WriteResult> Inserir(Usuario usuario)
+        public Task<string> Inserir(Usuario usuario)
         {
             return _usuarioDB.Inserir(usuario);
         }

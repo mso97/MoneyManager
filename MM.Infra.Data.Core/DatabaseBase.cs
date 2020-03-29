@@ -12,9 +12,11 @@ namespace MM.Infra.Data.Core
             this.collection = collection;
         }
 
-        public async Task<WriteResult> Inserir(T entidade)
+        public async Task<string> Inserir(T entidade)
         {
-            return DatabaseConfig.OpenConnection().Collection(collection).Document().SetAsync(entidade).Result;
+            var document = DatabaseConfig.OpenConnection().Collection(collection).Document();
+            var result = document.SetAsync(entidade);
+            return document.Id;
         }
     }
 }

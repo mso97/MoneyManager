@@ -6,6 +6,6 @@ namespace MM.Infra.Data.Interface
 {
     public interface IUsuarioDB
     {
-        Task<WriteResult> Inserir(Usuario usuario);
+        Task<string> Inserir(Usuario usuario);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Google.Cloud.Firestore;
 using Microsoft.AspNetCore.Mvc;
+using MM.Application.Core;
 using MM.Domain;
 using MM.Service.Interface;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ namespace MM.Application.Controllers
 {
     [Route("v1/[controller]")]
     [ApiController]
-    public class UsuariosController : ControllerBase
+    public class UsuariosController : ApiBase
     {
         private readonly IUsuarioService _service;
         public UsuariosController(IUsuarioService service)
@@ -17,9 +18,9 @@ namespace MM.Application.Controllers
         }
 
         [HttpPost]
-        public async Task<WriteResult> Post(Usuario usuario)
+        public async Task<object> Post(Usuario usuario)
         {
-            return await _service.Inserir(usuario);
+            return retornaJson(_service.Inserir(usuario));
         }
     }
 }
