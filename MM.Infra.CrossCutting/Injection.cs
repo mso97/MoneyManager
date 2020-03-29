@@ -1,5 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FluentValidation;
+using Microsoft.Extensions.DependencyInjection;
 using MM.Domain;
+using MM.Domain.Validators;
 using MM.Infra.Data;
 using MM.Infra.Data.Interface;
 using MM.Service;
@@ -16,6 +18,9 @@ namespace MM.Infra.CrossCutting
 
             // Data
             services.AddScoped<IUsuarioDB, UsuarioDB>();
+
+            // Validator
+            services.AddScoped<IValidator<Usuario>, UsuarioInsertValidator>();
         }
     }
 }

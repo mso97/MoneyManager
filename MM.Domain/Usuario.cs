@@ -26,5 +26,15 @@ namespace MM.Domain
         public string Senha { get; set; }
         [FirestoreProperty]
         public string Salt { get; set; }
+
+        public void SetSalt(string Salt)
+        {
+            this.Salt = Salt;
+        }
+
+        public void SetSenha(string Senha)
+        {
+            this.Senha = Senha;
+        }
     }
 }

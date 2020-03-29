@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\UsuarioController.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\MM.Infra.CrossCutting\MM.Infra.CrossCutting.csproj" />
   </ItemGroup>
 
