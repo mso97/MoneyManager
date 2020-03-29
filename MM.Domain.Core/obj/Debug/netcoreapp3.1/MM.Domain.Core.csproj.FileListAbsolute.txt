@@ -1,8 +1,0 @@
-C:\GITHUB\MoneyManager\MM.Domain.Core\bin\Debug\netcoreapp3.1\MM.Domain.Core.deps.json
-C:\GITHUB\MoneyManager\MM.Domain.Core\bin\Debug\netcoreapp3.1\MM.Domain.Core.dll
-C:\GITHUB\MoneyManager\MM.Domain.Core\bin\Debug\netcoreapp3.1\MM.Domain.Core.pdb
-C:\GITHUB\MoneyManager\MM.Domain.Core\obj\Debug\netcoreapp3.1\MM.Domain.Core.csproj.CoreCompileInputs.cache
-C:\GITHUB\MoneyManager\MM.Domain.Core\obj\Debug\netcoreapp3.1\MM.Domain.Core.AssemblyInfoInputs.cache
-C:\GITHUB\MoneyManager\MM.Domain.Core\obj\Debug\netcoreapp3.1\MM.Domain.Core.AssemblyInfo.cs
-C:\GITHUB\MoneyManager\MM.Domain.Core\obj\Debug\netcoreapp3.1\MM.Domain.Core.dll
-C:\GITHUB\MoneyManager\MM.Domain.Core\obj\Debug\netcoreapp3.1\MM.Domain.Core.pdb
