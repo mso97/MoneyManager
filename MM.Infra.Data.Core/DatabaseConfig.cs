@@ -10,11 +10,11 @@ namespace MM.Infra.Data.Core
     {
         public static FirestoreDb OpenConnection()
         {
-            GoogleCredential credential = GoogleCredential.FromFile(@"nosso-dinheiro-67b8b-852252323c5e.json");
+            GoogleCredential credential = GoogleCredential.FromFile(@"nosso-dinheiro-44623-a014cfec215e.json");
             ChannelCredentials channelCredentials = credential.ToChannelCredentials();
             Channel channel = new Channel(FirestoreClient.DefaultEndpoint.ToString(), channelCredentials);
             FirestoreClient firestoreClient = FirestoreClient.Create(channel);
-            FirestoreDb db = FirestoreDb.Create("nosso-dinheiro-67b8b", firestoreClient);
+            FirestoreDb db = FirestoreDb.Create("nosso-dinheiro-44623", firestoreClient);
             return db;
         }
     }
