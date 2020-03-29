@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MM.Domain;
-using MM.Domain.Interface;
+using MM.Infra.Data;
+using MM.Infra.Data.Interface;
 using MM.Service;
 using MM.Service.Interface;
 
@@ -10,11 +11,11 @@ namespace MM.Infra.CrossCutting
     {
         public static void Configure(IServiceCollection services)
         {
-            // Domain
-            services.AddScoped<IUsuario, Usuario>();
-
             // Service
             services.AddScoped<IUsuarioService, UsuarioService>();
+
+            // Data
+            services.AddScoped<IUsuarioDB, UsuarioDB>();
         }
     }
 }

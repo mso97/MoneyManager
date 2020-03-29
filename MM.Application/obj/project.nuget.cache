@@ -1,9 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "D/Sb9QEx+TiV2tA1Tl4UJkXZpRHUUe6rRtCUZagT6RKshHg4FtzCpvn9RhKmrB0SRNSv2PBLcgK2qMf/XP/1tw==",
+  "dgSpecHash": "T69FUXbGLtQ9TEH0Q3inmyQFkOGFQ8Lh+fyWNxVCrhpJziSzSjfr9CFmvZ2emlr+LfRMGy0bLyvCT9cFSY02Yw==",
   "success": true,
   "projectFilePath": "C:\\GITHUB\\MoneyManager\\MM.Application\\MM.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\mso97\\.nuget\\packages\\google.api.commonprotos\\1.7.0\\google.api.commonprotos.1.7.0.nupkg.sha512",
+    "C:\\Users\\mso97\\.nuget\\packages\\google.api.gax\\2.10.0\\google.api.gax.2.10.0.nupkg.sha512",
+    "C:\\Users\\mso97\\.nuget\\packages\\google.api.gax.grpc\\2.10.0\\google.api.gax.grpc.2.10.0.nupkg.sha512",
+    "C:\\Users\\mso97\\.nuget\\packages\\google.apis\\1.41.1\\google.apis.1.41.1.nupkg.sha512",
+    "C:\\Users\\mso97\\.nuget\\packages\\google.apis.auth\\1.41.1\\google.apis.auth.1.41.1.nupkg.sha512",
+    "C:\\Users\\mso97\\.nuget\\packages\\google.apis.core\\1.41.1\\google.apis.core.1.41.1.nupkg.sha512",
+    "C:\\Users\\mso97\\.nuget\\packages\\google.cloud.firestore\\1.1.0\\google.cloud.firestore.1.1.0.nupkg.sha512",
+    "C:\\Users\\mso97\\.nuget\\packages\\google.cloud.firestore.v1\\1.1.0\\google.cloud.firestore.v1.1.1.0.nupkg.sha512",
+    "C:\\Users\\mso97\\.nuget\\packages\\google.longrunning\\1.1.0\\google.longrunning.1.1.0.nupkg.sha512",
+    "C:\\Users\\mso97\\.nuget\\packages\\google.protobuf\\3.8.0\\google.protobuf.3.8.0.nupkg.sha512",
+    "C:\\Users\\mso97\\.nuget\\packages\\grpc.auth\\2.27.0\\grpc.auth.2.27.0.nupkg.sha512",
+    "C:\\Users\\mso97\\.nuget\\packages\\grpc.core\\2.27.0\\grpc.core.2.27.0.nupkg.sha512",
+    "C:\\Users\\mso97\\.nuget\\packages\\grpc.core.api\\2.27.0\\grpc.core.api.2.27.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\mso97\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",
@@ -65,6 +78,7 @@
     "C:\\Users\\mso97\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
     "C:\\Users\\mso97\\.nuget\\packages\\system.globalization.calendars\\4.3.0\\system.globalization.calendars.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.globalization.extensions\\4.3.0\\system.globalization.extensions.4.3.0.nupkg.sha512",
+    "C:\\Users\\mso97\\.nuget\\packages\\system.interactive.async\\3.2.0\\system.interactive.async.3.2.0.nupkg.sha512",
     "C:\\Users\\mso97\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
     "C:\\Users\\mso97\\.nuget\\packages\\system.io.compression\\4.3.0\\system.io.compression.4.3.0.nupkg.sha512",
     "C:\\Users\\mso97\\.nuget\\packages\\system.io.compression.zipfile\\4.3.0\\system.io.compression.zipfile.4.3.0.nupkg.sha512",
@@ -112,5 +126,26 @@
     "C:\\Users\\mso97\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\mso97\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: Google.Api.Gax.Grpc 2.10.0 requires Grpc.Auth (>= 1.22.0 && < 2.0.0) but version Grpc.Auth 2.27.0 was resolved.",
+      "libraryId": "Grpc.Auth",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: Google.Api.Gax.Grpc 2.10.0 requires Grpc.Core (>= 1.22.0 && < 2.0.0) but version Grpc.Core 2.27.0 was resolved.",
+      "libraryId": "Grpc.Core",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

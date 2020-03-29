@@ -1,25 +1,30 @@
-﻿using MM.Domain.Core;
-using MM.Domain.Interface;
-using System;
+﻿using Google.Cloud.Firestore;
+using MM.Domain.Core;
 
 namespace MM.Domain
 {
-    public class Usuario : EntityBase<Usuario>, IUsuario
+    [FirestoreData]
+    public class Usuario : EntityBase<Usuario>
     {
-        private string Nome { get; set; }
-        private string Apelido { get; set; }
-        private string Email { get; set; }
-        private DateTime DataNascimento { get; set; }
-        private int Cpf { get; set; }
-        private int Telefone { get; set; }
-        private int Genero { get; set; }
-        private DateTime DataCadastro { get; set; }
-        private string Senha { get; set; }
-        private string Salt { get; set; }
-
-        public string resultado()
-        {
-            return "trolhei";
-        }
+        [FirestoreProperty]
+        public string Nome { get; set; }
+        [FirestoreProperty]
+        public string Apelido { get; set; }
+        [FirestoreProperty]
+        public string Email { get; set; }
+        [FirestoreProperty]
+        public Timestamp DataNascimento { get; set; }
+        [FirestoreProperty]
+        public int Cpf { get; set; }
+        [FirestoreProperty]
+        public int Telefone { get; set; }
+        [FirestoreProperty]
+        public int Genero { get; set; }
+        [FirestoreProperty]
+        public Timestamp DataCadastro { get; set; }
+        [FirestoreProperty]
+        public string Senha { get; set; }
+        [FirestoreProperty]
+        public string Salt { get; set; }
     }
 }

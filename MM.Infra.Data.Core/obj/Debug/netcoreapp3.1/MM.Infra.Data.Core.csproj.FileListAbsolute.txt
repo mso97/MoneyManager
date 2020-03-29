@@ -1,0 +1,8 @@
+C:\GITHUB\MoneyManager\MM.Infra.Data.Core\obj\Debug\netcoreapp3.1\MM.Infra.Data.Core.csproj.CoreCompileInputs.cache
+C:\GITHUB\MoneyManager\MM.Infra.Data.Core\obj\Debug\netcoreapp3.1\MM.Infra.Data.Core.AssemblyInfoInputs.cache
+C:\GITHUB\MoneyManager\MM.Infra.Data.Core\obj\Debug\netcoreapp3.1\MM.Infra.Data.Core.AssemblyInfo.cs
+C:\GITHUB\MoneyManager\MM.Infra.Data.Core\bin\Debug\netcoreapp3.1\MM.Infra.Data.Core.deps.json
+C:\GITHUB\MoneyManager\MM.Infra.Data.Core\bin\Debug\netcoreapp3.1\MM.Infra.Data.Core.dll
+C:\GITHUB\MoneyManager\MM.Infra.Data.Core\bin\Debug\netcoreapp3.1\MM.Infra.Data.Core.pdb
+C:\GITHUB\MoneyManager\MM.Infra.Data.Core\obj\Debug\netcoreapp3.1\MM.Infra.Data.Core.dll
+C:\GITHUB\MoneyManager\MM.Infra.Data.Core\obj\Debug\netcoreapp3.1\MM.Infra.Data.Core.pdb

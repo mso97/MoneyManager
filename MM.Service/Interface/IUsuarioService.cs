@@ -1,7 +1,11 @@
-﻿namespace MM.Service.Interface
+﻿using Google.Cloud.Firestore;
+using MM.Domain;
+using System.Threading.Tasks;
+
+namespace MM.Service.Interface
 {
     public interface IUsuarioService
     {
-        string resultado();
+        Task<WriteResult> Inserir(Usuario usuario);
     }
 }

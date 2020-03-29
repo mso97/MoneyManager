@@ -40,6 +40,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Grpc.Auth": {
+              "target": "Package",
+              "version": "[2.27.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -99,6 +105,16 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Google.Cloud.Firestore": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Grpc.Auth": {
+              "target": "Package",
+              "version": "[2.27.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

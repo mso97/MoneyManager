@@ -1,20 +1,23 @@
-﻿using MM.Domain.Interface;
+﻿using Google.Cloud.Firestore;
+using MM.Domain;
+using MM.Infra.Data.Interface;
 using MM.Service.Interface;
+using System.Threading.Tasks;
 
 namespace MM.Service
 {
     public class UsuarioService : IUsuarioService
     {
-        private readonly IUsuario _domain;
+        private readonly IUsuarioDB _usuarioDB;
 
-        public UsuarioService(IUsuario domain)
+        public UsuarioService(IUsuarioDB usuarioDB)
         {
-            _domain = domain;
+            _usuarioDB = usuarioDB;
         }
 
-        public string resultado()
+        public Task<WriteResult> Inserir(Usuario usuario)
         {
-            return _domain.resultado();
+            return _usuarioDB.Inserir(usuario);
         }
     }
 }

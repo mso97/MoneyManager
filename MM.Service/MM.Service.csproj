@@ -5,7 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Grpc.Auth" Version="2.27.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MM.Domain\MM.Domain.csproj" />
+    <ProjectReference Include="..\MM.Infra.Data\MM.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>

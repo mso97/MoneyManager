@@ -5,10 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\UsuarioController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MM.Infra.CrossCutting\MM.Infra.CrossCutting.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Google.Cloud.Firestore" Version="1.1.0" />
+    <PackageReference Include="Grpc.Auth" Version="2.27.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
   </ItemGroup>
 
