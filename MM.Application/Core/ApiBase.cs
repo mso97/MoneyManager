@@ -7,14 +7,9 @@ namespace MM.Application.Core
 {
     public abstract class ApiBase : ControllerBase
     {
-        public object RetornaJson(object retorno, int status = (int)HttpStatusCode.OK)
+        public JsonReturn RetornaJson(object retorno, int status = (int)HttpStatusCode.OK)
         {
-            object json = new
-            {
-                Status = status,
-                Retorno = retorno
-            };
-
+            JsonReturn json = new JsonReturn(retorno, status);
             return json;
         }
     }

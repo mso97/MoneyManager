@@ -23,7 +23,7 @@ namespace MM.Application.Controllers
         }
 
         [HttpPost]
-        public async Task<object> Post(Usuario usuario)
+        public async Task<JsonReturn> Post(Usuario usuario)
         {
             ValidationResult results = _validator.Validate(usuario);
             if (results.IsValid)
