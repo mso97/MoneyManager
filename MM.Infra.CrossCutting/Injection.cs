@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using MM.Domain;
+using MM.Domain.Interface.Repository;
 using MM.Domain.Validators;
-using MM.Infra.Data;
-using MM.Infra.Data.Interface;
+using MM.Infra.Data.Repository;
 using MM.Service;
 using MM.Service.Interface;
 
@@ -16,11 +16,12 @@ namespace MM.Infra.CrossCutting
             // Service
             services.AddScoped<IUsuarioService, UsuarioService>();
 
-            // Data
-            services.AddScoped<IUsuarioDB, UsuarioDB>();
-
             // Validator
             services.AddScoped<IValidator<Usuario>, UsuarioInsertValidator>();
+
+            // Repository
+            services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
         }
     }
 }

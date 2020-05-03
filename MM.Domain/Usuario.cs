@@ -1,37 +1,25 @@
-﻿using Google.Cloud.Firestore;
-using MM.Domain.Core;
+﻿using MM.Domain.Core;
+using System;
+using static MM.Domain.Enum;
 
 namespace MM.Domain
 {
-    [FirestoreData]
-    public class Usuario : EntityBase<Usuario>
+    public class Usuario : EntityBase
     {
-        [FirestoreProperty]
         public string Nome { get; set; }
-        [FirestoreProperty]
         public string Apelido { get; set; }
-        [FirestoreProperty]
         public string Email { get; set; }
-        [FirestoreProperty]
-        public Timestamp DataNascimento { get; set; }
-        [FirestoreProperty]
-        public int Cpf { get; set; }
-        [FirestoreProperty]
+        public DateTime DataNascimento { get; set; }
+        public string Cpf { get; set; }
         public int Telefone { get; set; }
-        [FirestoreProperty]
-        public int Genero { get; set; }
-        [FirestoreProperty]
-        public Timestamp DataCadastro { get; set; }
-        [FirestoreProperty]
+        public EnumGenero Genero { get; set; }
+        public DateTime DataCadastro { get; set; }
         public string Senha { get; set; }
-        [FirestoreProperty]
         public string Salt { get; set; }
-
         public void SetSalt(string Salt)
         {
             this.Salt = Salt;
         }
-
         public void SetSenha(string Senha)
         {
             this.Senha = Senha;

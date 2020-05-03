@@ -1,6 +1,5 @@
-﻿using Google.Cloud.Firestore;
-using MM.Domain;
-using MM.Infra.Data.Interface;
+﻿using MM.Domain;
+using MM.Domain.Interface.Repository;
 using MM.Service.Interface;
 using System;
 using System.Security.Cryptography;
@@ -11,19 +10,19 @@ namespace MM.Service
 {
     public class UsuarioService : IUsuarioService
     {
-        private readonly IUsuarioDB _usuarioDB;
+        private readonly IUsuarioRepository _usuarioRepository;
 
-        public UsuarioService(IUsuarioDB usuarioDB)
+        public UsuarioService(IUsuarioRepository usuarioRepository)
         {
-            _usuarioDB = usuarioDB;
+            _usuarioRepository = usuarioRepository;
         }
 
-        public Task<string> Inserir(Usuario usuario)
+        public Guid Inserir(Usuario usuario)
         {
             usuario.SetSalt(CreateSalt());
             usuario.SetSenha(CreateHash(usuario.Senha, usuario.Salt));
 
-            return _usuarioDB.Inserir(usuario);
+            return _usuarioRepository.Inserir(usuario);
         }
 
         public string CreateSalt()

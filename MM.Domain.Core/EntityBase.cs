@@ -2,7 +2,8 @@
 
 namespace MM.Domain.Core
 {
-    public abstract class EntityBase<TEntity> where TEntity : class
+    public abstract class EntityBase
     {
+        public Guid Id { get; set; }
     }
 }
