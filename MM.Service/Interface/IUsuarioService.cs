@@ -1,7 +1,5 @@
-﻿using Google.Cloud.Firestore;
-using MM.Domain;
+﻿using MM.Domain;
 using System;
-using System.Threading.Tasks;
 
 namespace MM.Service.Interface
 {

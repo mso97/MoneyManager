@@ -1,7 +1,5 @@
-﻿using Google.Cloud.Firestore;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Net;
-using System.Threading.Tasks;
 
 namespace MM.Application.Core
 {
