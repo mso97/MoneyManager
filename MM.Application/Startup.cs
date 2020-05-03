@@ -20,6 +20,9 @@ namespace MM.Application
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddCors();
+
             Injection.Configure(services);
         }
 
@@ -33,7 +36,7 @@ namespace MM.Application
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseCors(option => option.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseEndpoints(endpoints =>
             {
