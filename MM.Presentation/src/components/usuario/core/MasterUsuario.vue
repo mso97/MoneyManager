@@ -4,17 +4,20 @@
             <div class="background"></div>
             <div class="container card">
                 <div class="row">
-                    <v-card class="mx-auto my-auto" outlined min-width="40%">
+                    <v-card class="mx-auto my-auto" min-width="40%">
                         <div class="container">
                             <v-card-actions>
                                 <div class="row">
-                                    <v-btn disabled large color="primary" class="col-lg-6 col-sm-12">CADASTRE</v-btn>
-                                    <v-btn text large color="primary" class="col-lg-6 col-sm-12">ENTRE</v-btn>
+                                    <v-btn :disabled="cadastrar" :text="!cadastrar" large color="primary" @click="clickCadastre" 
+                                        class="col-lg-6 col-sm-12">CADASTRE</v-btn>
+                                    <v-btn :disabled="!cadastrar" :text="cadastrar" large color="primary" @click="clickEntre" 
+                                        class="col-lg-6 col-sm-12">ENTRE</v-btn>
                                 </div>
                             </v-card-actions>
                             <hr>
                             <v-card-text>
-                                <UsuarioInsert/>
+                                <UsuarioInsert v-if="cadastrar"/>
+                                <UsuarioLogin v-else/>
                             </v-card-text>
                         </div>
                     </v-card>
@@ -27,13 +30,28 @@
 </template>
 
 <script>
-    import UsuarioInsert from '../insert/UsuarioInsert'
+    import UsuarioInsert from '../insert/UsuarioInsert';
+    import UsuarioLogin from '../login/UsuarioLogin';
 
     export default {
         name: 'MasterUsuario',
 
+        data: () => ({
+            cadastrar: true
+        }),
+
+        methods: {
+            clickCadastre(){
+                this.cadastrar = true;
+            },
+            clickEntre(){
+                this.cadastrar = false;
+            }
+        },
+
         components: {
-            UsuarioInsert
+            UsuarioInsert,
+            UsuarioLogin
         }
     }
 </script>
@@ -53,5 +71,6 @@
 }
 .card {
     z-index: 2;
+    margin-top: 5%;
 }
 </style>

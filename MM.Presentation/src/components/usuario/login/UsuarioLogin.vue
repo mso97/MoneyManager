@@ -1,34 +1,27 @@
 <template>
-    <div class="UsuarioInsert">
+  <div class="UsuarioLogin">
         <form>
-            <v-text-field v-model="nome" label="Nome" required></v-text-field>
             <v-text-field v-model="email" label="E-mail" required></v-text-field>
             <v-text-field v-model="senha" label="Senha" required></v-text-field>
             <div class="row d-flex justify-center">
-                <v-btn @click="submit" large depressed>CADASTRAR</v-btn>
+                <v-btn @click="submit" large depressed>ENTRAR</v-btn>
             </div>
         </form>
     </div>
 </template>
 
 <script>
-    import axios from 'axios'
-
     export default {
-        name: 'UsuarioInsert',
+        name: 'UsuarioLogin',
 
         data: () => ({
-            nome: '',
             email: '',
             senha: ''
         }),
 
         methods: {
             submit () {
-                console.log(this.$data)
-                console.log(JSON.stringify(this.$data))
-
-                axios.post('http://localhost:52690/v1/usuario', this.$data);
+                alert("oi")
             }
         }
     };
