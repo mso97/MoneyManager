@@ -1,7 +1,10 @@
-﻿using MM.Domain;
+﻿using FluentValidation.Results;
+using MM.Domain;
 using MM.Domain.Interface.Repository;
+using MM.Domain.Notifications;
 using MM.Service.Interface;
 using System;
+using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,10 +14,12 @@ namespace MM.Service
     public class UsuarioService : IUsuarioService
     {
         private readonly IUsuarioRepository _usuarioRepository;
+        private readonly NotificationContext _notificationContext;
 
-        public UsuarioService(IUsuarioRepository usuarioRepository)
+        public UsuarioService(IUsuarioRepository usuarioRepository, NotificationContext notificationContext)
         {
             _usuarioRepository = usuarioRepository;
+            _notificationContext = notificationContext;
         }
 
         public Guid Inserir(Usuario usuario)

@@ -3,6 +3,7 @@ using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using MM.Application.Core;
 using MM.Domain;
+using MM.Domain.Notifications;
 using MM.Service.Interface;
 using System.Net;
 using System.Threading.Tasks;

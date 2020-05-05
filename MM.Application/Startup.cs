@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MM.Domain.Notifications;
 using MM.Infra.CrossCutting;
 using MM.Infra.Data.Contexts;
 
@@ -23,7 +24,7 @@ namespace MM.Application
         {
             services.AddDbContext<Context>(o => o.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddControllers();
+            services.AddControllers(options => options.Filters.Add<NotificationFilter>());
 
             services.AddCors();
 

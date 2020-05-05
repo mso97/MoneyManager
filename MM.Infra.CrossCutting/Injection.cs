@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using MM.Domain;
 using MM.Domain.Interface.Repository;
+using MM.Domain.Notifications;
 using MM.Domain.Validators;
 using MM.Infra.Data.Repository;
 using MM.Service;
@@ -22,6 +23,9 @@ namespace MM.Infra.CrossCutting
             // Repository
             services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+
+            // Notification
+            services.AddScoped<NotificationContext>();
         }
     }
 }
