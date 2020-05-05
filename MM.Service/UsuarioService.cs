@@ -26,6 +26,10 @@ namespace MM.Service
         {
             usuario.SetSalt(CreateSalt());
             usuario.SetSenha(CreateHash(usuario.Senha, usuario.Salt));
+            usuario.setDataCadastro();
+
+            if (!ValidarInserir(usuario))
+                return new Guid();
 
             return _usuarioRepository.Inserir(usuario);
         }
@@ -44,6 +48,17 @@ namespace MM.Service
             SHA256Managed sHA256ManagedString = new SHA256Managed();
             byte[] hash = sHA256ManagedString.ComputeHash(bytes);
             return Convert.ToBase64String(hash);
+        }
+
+        public bool ValidarInserir(Usuario usuario)
+        {
+            if (_usuarioRepository.SelecionarPorEmail(usuario.Email) != null)
+            {
+                _notificationContext.AddNotification("Já existe um cadastro com este e-mail.", "400");
+                return false;
+            }
+
+            return true;
         }
     }
 }

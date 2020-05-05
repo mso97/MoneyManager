@@ -1,16 +1,28 @@
-﻿using System.Net;
+﻿using System.Collections.Generic;
 
 namespace MM.Application.Core
 {
     public class JsonReturn
     {
-        public object Result { get; set; }
-        public int Status { get; set; }
+        public int StatusCode { get; set; }
+        public bool Success { get; set; }
+        public object Error { get; set; }
+        public object Data { get; set; }
 
-        public JsonReturn(object Result, int Status)
+        public JsonReturn()
         {
-            this.Result = Result;
-            this.Status = Status;
+            Data = null;
+            Error = null;
+            StatusCode = 0;
+            Success = false;
+        }
+
+        public JsonReturn(object data, object error, int statusCode, bool success)
+        {
+            Data = Data;
+            Error = Error;
+            StatusCode = statusCode;
+            Success = Success;
         }
     }
 }

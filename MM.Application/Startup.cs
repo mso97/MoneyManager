@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MM.Domain.Notifications;
+using MM.Application.Core;
 using MM.Infra.CrossCutting;
 using MM.Infra.Data.Contexts;
 

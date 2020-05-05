@@ -16,13 +16,20 @@ namespace MM.Domain
         public DateTime DataCadastro { get; set; }
         public string Senha { get; set; }
         public string Salt { get; set; }
+
         public void SetSalt(string Salt)
         {
             this.Salt = Salt;
         }
+
         public void SetSenha(string Senha)
         {
             this.Senha = Senha;
+        }
+
+        public void setDataCadastro()
+        {
+            this.DataCadastro = DateTime.Now;
         }
     }
 }

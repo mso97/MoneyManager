@@ -4,9 +4,10 @@
     {
         public enum EnumGenero
         {
-            Masculino = 0,
-            Feminino = 1,
-            LGBT = 2
+            NaoInformado = 0,
+            Masculino = 1,
+            Feminino = 2,
+            LGBT = 3
         }
     }
 }

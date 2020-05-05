@@ -7,7 +7,20 @@ namespace MM.Application.Core
     {
         public JsonReturn RetornaJson(object retorno, int status = (int)HttpStatusCode.OK)
         {
-            JsonReturn json = new JsonReturn(retorno, status);
+            JsonReturn json = new JsonReturn();
+            
+            if (status == (int)HttpStatusCode.OK)
+            {
+                json.Data = retorno;
+                json.StatusCode = (int)HttpStatusCode.OK;
+                json.Success = true;
+            }
+            else
+            {
+                json.Error = retorno;
+                json.StatusCode = status;
+                json.Success = false;
+            }
             return json;
         }
     }
