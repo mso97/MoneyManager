@@ -1,9 +1,22 @@
 <template>
     <div class="UsuarioInsert">
         <form>
-            <v-text-field v-model="nome" label="Nome" required></v-text-field>
-            <v-text-field v-model="email" label="E-mail" required></v-text-field>
-            <v-text-field v-model="senha" label="Senha" required></v-text-field>
+            <v-text-field v-model="nome" label="Nome"
+                @input="$v.nome.$touch()" @blur="$v.nome.$touch()"
+                :error-messages="errorsNome"
+                required>
+            </v-text-field>
+            <v-text-field v-model="email" label="E-mail"
+                @input="$v.email.$touch()" @blur="$v.email.$touch()"
+                :error-messages="errorsEmail"
+                required>
+            </v-text-field>
+            <v-text-field v-model="senha" label="Senha"
+                @input="$v.senha.$touch()" @blur="$v.senha.$touch()"
+                :error-messages="errorsSenha"
+                required
+                type="password">
+            </v-text-field>
             <div class="row d-flex justify-center">
                 <v-btn @click="submit" large depressed>CADASTRAR</v-btn>
             </div>
@@ -13,9 +26,44 @@
 
 <script>
     import axios from 'axios'
+    import { validationMixin } from 'vuelidate'
+    import { required, maxLength, email } from 'vuelidate/lib/validators'
 
     export default {
         name: 'UsuarioInsert',
+
+        mixins: [validationMixin],
+
+        validations: {
+            nome: {required, maxLength: maxLength(50)},
+            email: {required, maxLength: maxLength(100), email},
+            senha: {required, maxLength: maxLength(50)}
+        },
+
+        computed: {
+            errorsNome () {
+                const errors = []
+                if (!this.$v.nome.$dirty) return errors
+                !this.$v.nome.required && errors.push('O nome é obrigatório.')
+                !this.$v.nome.maxLength && errors.push('O tamanho máximo é 50 caracteres.')
+                return errors
+            },
+            errorsEmail () {
+                const errors = []
+                if (!this.$v.email.$dirty) return errors
+                !this.$v.email.required && errors.push('O e-mail é obrigatório.')
+                !this.$v.email.maxLength && errors.push('O tamanho máximo é 100 caracteres.')
+                !this.$v.email.email && errors.push('É necessário um e-mail válido.')
+                return errors
+            },
+            errorsSenha () {
+                const errors = []
+                if (!this.$v.senha.$dirty) return errors
+                !this.$v.senha.required && errors.push('A senha é obrigatória.')
+                !this.$v.senha.maxLength && errors.push('O tamanho máximo é 50 caracteres.')
+                return errors
+            }
+        },
 
         data: () => ({
             nome: '',
@@ -25,8 +73,8 @@
 
         methods: {
             submit () {
-                console.log(this.$data)
-                console.log(JSON.stringify(this.$data))
+                this.$v.$touch()
+                if(this.$v.$error) return
 
                 axios.post('http://localhost:52690/v1/usuario', this.$data);
             }

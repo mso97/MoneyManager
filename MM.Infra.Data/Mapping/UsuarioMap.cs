@@ -11,11 +11,11 @@ namespace MM.Infra.Data.Mapping
             base.Configure(builder);
             builder.ToTable("Usuario");
 
-            builder.Property(c => c.Nome).IsRequired().HasMaxLength(200);
+            builder.Property(c => c.Nome).IsRequired().HasMaxLength(50);
 
-            builder.Property(c => c.Apelido).HasMaxLength(100);
+            builder.Property(c => c.Apelido).HasMaxLength(50);
 
-            builder.Property(c => c.Email).IsRequired().HasMaxLength(200);
+            builder.Property(c => c.Email).IsRequired().HasMaxLength(100);
 
             builder.Property(c => c.DataNascimento);
 
