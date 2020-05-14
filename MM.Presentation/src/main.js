@@ -13,14 +13,6 @@ axios.interceptors.request.use(config => {
     return config;
 });
 
-// const axiosResponse = (t) => {
-//     return t.data;
-// }
-
-// const axiosError = (t) => {
-//     return t.response.data;
-// }
-
 axios.interceptors.response.use(
     configResponse => configResponse.data,
     configError => configError.response.data
