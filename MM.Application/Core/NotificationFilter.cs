@@ -18,16 +18,15 @@ namespace MM.Application.Core
 
 		public async Task OnResultExecutionAsync(ResultExecutingContext context, ResultExecutionDelegate next)
 		{
-			if (_notificationContext.HasNotifications)
-			{
-				context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
-				context.HttpContext.Response.ContentType = "application/json";
+			//if (_notificationContext.HasNotifications)
+			//{
+			//	context.HttpContext.Response.ContentType = "application/json";
 
-				var notifications = JsonConvert.SerializeObject(RetornaJson(_notificationContext.Notifications, (int)HttpStatusCode.BadRequest));
-				await context.HttpContext.Response.WriteAsync(notifications);
+			//	var notifications = JsonConvert.SerializeObject(RetornaJson(_notificationContext.Notifications, (int)HttpStatusCode.BadRequest));
+			//	await context.HttpContext.Response.WriteAsync(notifications);
 
-				return;
-			}
+			//	return;
+			//}
 
 			await next();
 		}

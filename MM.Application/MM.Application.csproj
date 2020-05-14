@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Core\NotificationFilter.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MM.Infra.CrossCutting\MM.Infra.CrossCutting.csproj" />
   </ItemGroup>
 

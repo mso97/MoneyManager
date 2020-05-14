@@ -76,7 +76,13 @@
                 this.$v.$touch()
                 if(this.$v.$error) return
 
-                axios.post('http://localhost:52690/v1/usuario', this.$data);
+                axios.post('usuario', this.$data)
+                    .then(response => {
+                        console.log(response);
+                    })
+                    .catch(response => {
+                        console.log(response);
+                    });
             }
         }
     };

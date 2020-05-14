@@ -24,8 +24,6 @@ namespace MM.Application
         {
             services.AddDbContext<Context>(o => o.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddControllers(options => options.Filters.Add<NotificationFilter>());
-
             services.AddCors();
 
             Injection.Configure(services);

@@ -16,20 +16,28 @@ namespace MM.Application.Controllers
     {
         private readonly IUsuarioService _service;
         private readonly IValidator<Usuario> _validator;
-        public UsuarioController(IUsuarioService service, IValidator<Usuario> validator)
+        private readonly NotificationContext _notificationContext;
+        public UsuarioController(IUsuarioService service, IValidator<Usuario> validator, NotificationContext notificationContext)
         {
             _service = service;
             _validator = validator;
+            _notificationContext = notificationContext;
         }
 
         [HttpPost]
         public async Task<JsonReturn> Post(Usuario usuario)
         {
             ValidationResult results = _validator.Validate(usuario);
+            JsonReturn j;
             if (results.IsValid)
-                return RetornaJson(_service.Inserir(usuario));
+                j = RetornaJson(_service.Inserir(usuario));
             else
-                return RetornaJson(results.Errors, (int)HttpStatusCode.BadRequest);
+                j = RetornaJson(results.Errors, (int)HttpStatusCode.BadRequest);
+
+            if (_notificationContext.HasNotifications)
+                j = RetornaJson(_notificationContext.Notifications, (int)HttpStatusCode.BadRequest);
+
+            return j;
         }
     }
 }
