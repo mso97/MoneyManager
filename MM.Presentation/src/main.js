@@ -3,8 +3,11 @@ import App from './App.vue';
 import vuetify from './plugins/vuetify';
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import Toast, { POSITION } from "vue-toastification";
+import "vue-toastification/dist/index.css";
 
 Vue.use(VueAxios, axios);
+Vue.use(Toast, {position: POSITION.TOP_RIGHT});
 
 Vue.config.productionTip = true;
 
@@ -15,7 +18,12 @@ axios.interceptors.request.use(config => {
 
 axios.interceptors.response.use(
     configResponse => configResponse.data,
-    configError => configError.response.data
+    configError => {
+        if (configError.response == undefined){
+            return configError;
+        }
+        return configError.response.data;
+    }
 );
 
 new Vue({

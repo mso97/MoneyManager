@@ -24,6 +24,8 @@ namespace MM.Application
         {
             services.AddDbContext<Context>(o => o.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddControllers();
+
             services.AddCors();
 
             Injection.Configure(services);
