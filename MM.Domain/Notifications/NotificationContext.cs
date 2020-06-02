@@ -15,16 +15,16 @@ namespace MM.Domain.Notifications
             _notifications = new List<Notification>();
         }
 
-        public void AddNotification(string message, string key = "500")
+        public void AddNotification(string message)
         {
-            _notifications.Add(new Notification(key, message));
+            _notifications.Add(new Notification(message));
         }
 
         public void AddNotifications(ValidationResult validationResult)
         {
             foreach (var error in validationResult.Errors)
             {
-                AddNotification(error.ErrorCode, error.ErrorMessage);
+                AddNotification(error.ErrorMessage);
             }
         }
     }

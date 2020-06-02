@@ -54,7 +54,7 @@ namespace MM.Service
         {
             if (_usuarioRepository.SelecionarPorEmail(usuario.Email) != null)
             {
-                _notificationContext.AddNotification("Já existe um cadastro com este e-mail.", "400");
+                _notificationContext.AddNotification("Já existe um cadastro com este e-mail.");
                 return false;
             }
 

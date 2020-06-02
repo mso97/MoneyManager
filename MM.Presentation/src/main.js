@@ -20,8 +20,10 @@ axios.interceptors.response.use(
     configResponse => configResponse.data,
     configError => {
         if (configError.response == undefined){
+            console.log(configError);
             return configError;
         }
+        console.log(configError.response.data)
         return configError.response.data;
     }
 );
