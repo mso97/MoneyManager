@@ -27,7 +27,7 @@
 <script>
     import axios from 'axios'
     import { validationMixin } from 'vuelidate'
-    import { required, maxLength, email, /*minLength*/ } from 'vuelidate/lib/validators'
+    import { required, maxLength, email, minLength } from 'vuelidate/lib/validators'
 
     export default {
         name: 'UsuarioInsert',
@@ -37,7 +37,7 @@
         validations: {
             nome: {required, maxLength: maxLength(50)},
             email: {required, maxLength: maxLength(100), email},
-            senha: {required, maxLength: maxLength(50)/*, minLength: minLength(6)*/ }
+            senha: {required, maxLength: maxLength(50), minLength: minLength(6) }
         },
 
         computed: {
@@ -61,7 +61,7 @@
                 if (!this.$v.senha.$dirty) return errors;
                 !this.$v.senha.required && errors.push('A senha é obrigatória.');
                 !this.$v.senha.maxLength && errors.push('O tamanho máximo é 50 caracteres.');
-                // !this.$v.senha.minLength && errors.push('O tamanho minimo é 6 caracteres.');
+                !this.$v.senha.minLength && errors.push('O tamanho minimo é 6 caracteres.');
                 return errors
             }
         },
