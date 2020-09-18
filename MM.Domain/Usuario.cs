@@ -16,6 +16,8 @@ namespace MM.Domain
         public DateTime DataCadastro { get; set; }
         public string Senha { get; set; }
         public string Salt { get; set; }
+        public string Role { get; set; }
+        public string Token { get; set; }
 
         public void SetSalt(string Salt)
         {
@@ -30,6 +32,11 @@ namespace MM.Domain
         public void setDataCadastro()
         {
             this.DataCadastro = DateTime.Now;
+        }
+
+        public void SetRole(string Role)
+        {
+            this.Role = Role;
         }
     }
 }

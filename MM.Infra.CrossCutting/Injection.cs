@@ -16,6 +16,7 @@ namespace MM.Infra.CrossCutting
         {
             // Service
             services.AddScoped<IUsuarioService, UsuarioService>();
+            services.AddScoped<ILoginService, LoginService>();
 
             // Validator
             services.AddScoped<IValidator<Usuario>, UsuarioInsertValidator>();

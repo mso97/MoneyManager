@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using MM.Domain;
+using System.Security.Cryptography.X509Certificates;
 
 namespace MM.Infra.Data.Mapping
 {
@@ -30,6 +31,10 @@ namespace MM.Infra.Data.Mapping
             builder.Property(c => c.Senha).IsRequired().HasMaxLength(500);
 
             builder.Property(c => c.Salt).IsRequired().HasMaxLength(500);
+
+            builder.Property(c => c.Role).IsRequired().HasMaxLength(100);
+
+            builder.Ignore(c => c.Token);
         }
     }
 }

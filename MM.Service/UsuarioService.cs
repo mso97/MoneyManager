@@ -1,13 +1,10 @@
-﻿using FluentValidation.Results;
-using MM.Domain;
+﻿using MM.Domain;
 using MM.Domain.Interface.Repository;
 using MM.Domain.Notifications;
 using MM.Service.Interface;
 using System;
-using System.Net;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace MM.Service
 {
@@ -26,6 +23,7 @@ namespace MM.Service
         {
             usuario.SetSalt(CreateSalt());
             usuario.SetSenha(CreateHash(usuario.Senha, usuario.Salt));
+            usuario.SetRole("default");
             usuario.setDataCadastro();
 
             if (!ValidarInserir(usuario))

@@ -13,7 +13,8 @@ namespace MM.Infra.Data.Repository
 
         public Usuario SelecionarPorEmail(string email)
         {
-            return context.Set<Usuario>().Where(x => x.Email.Equals(email)).FirstOrDefault();
+            var x = context.Set<Usuario>().Where(x => x.Email.Equals(email)).FirstOrDefault();
+            return x;
         }
     }
 }
