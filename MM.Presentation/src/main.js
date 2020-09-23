@@ -5,6 +5,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import Toast, { POSITION } from "vue-toastification";
 import "vue-toastification/dist/index.css";
+import router from './router'
 
 Vue.use(VueAxios, axios);
 Vue.use(Toast, {position: POSITION.TOP_RIGHT});
@@ -30,5 +31,6 @@ axios.interceptors.response.use(
 
 new Vue({
     vuetify,
+    router,
     render: h => h(App)
 }).$mount('#app');

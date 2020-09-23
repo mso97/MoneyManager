@@ -36,6 +36,14 @@
     export default {
         name: 'MasterUsuario',
 
+        beforeCreate() {
+            let token = localStorage.getItem('NossoDinheiroTK');
+
+			if (token != null){
+				this.$router.push('/')
+			}
+        },
+
         data: () => ({
             cadastrar: true
         }),

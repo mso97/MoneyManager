@@ -1,19 +1,16 @@
 <template>
-  <MasterUsuario/>
+	<div>
+		<router-view/>
+	</div>
 </template>
 
 <script>
-import MasterUsuario from './components/usuario/core/MasterUsuario';
 
-export default {
-  name: 'App',
+	export default {
+		name: 'App',
 
-  components: {
-    MasterUsuario
-  },
-
-  data: () => ({
-    //
-  }),
-};
+		data: () => ({
+			logado: null
+		}),
+	};
 </script>

@@ -74,6 +74,7 @@
                     if (response.data != null) {
                         localStorage.setItem('NossoDinheiroTK', response.data.token);
                         this.$toast.success("Login realizado.");
+                        this.$router.push('/');
                     }
                     else {
                         if (response.error != null){
