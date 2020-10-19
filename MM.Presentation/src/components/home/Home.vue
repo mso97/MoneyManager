@@ -1,5 +1,5 @@
 <template>
-    <div class="Home">
+    <div class="Home container">
         Oie, voce está logado;
     </div>
 </template>
@@ -10,6 +10,3 @@
         name: 'Home'
     }
 </script>
-
-<style scoped>
-</style>

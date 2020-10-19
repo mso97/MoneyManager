@@ -24,12 +24,19 @@ namespace MM.Service
             usuario.SetSalt(CreateSalt());
             usuario.SetSenha(CreateHash(usuario.Senha, usuario.Salt));
             usuario.SetRole("default");
-            usuario.setDataCadastro();
+            usuario.SetDataCadastro();
 
             if (!ValidarInserir(usuario))
                 return new Guid();
 
             return _usuarioRepository.Inserir(usuario);
+        }
+
+        public Usuario Consultar(Guid id)
+        {
+            Usuario usuario = _usuarioRepository.SelecionarPorId(id);
+            usuario.LimpaConsulta();
+            return usuario;
         }
 
         public string CreateSalt()

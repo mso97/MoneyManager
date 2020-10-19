@@ -39,7 +39,8 @@ namespace MM.Service
                 {
                     new Claim(ClaimTypes.Name, usuarioBanco.Nome),
                     new Claim(ClaimTypes.Email, usuarioBanco.Email),
-                    new Claim("NossoDinheiro", usuarioBanco.Role)
+                    new Claim("NossoDinheiro", usuarioBanco.Role),
+                    new Claim("Id", usuarioBanco.Id.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddDays(30),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
@@ -70,6 +71,13 @@ namespace MM.Service
 
             _notificationContext.AddNotification("E-mail não encontrado.");
             return false;
+        }
+
+        public JwtSecurityToken DecryptToken(string token)
+        {
+            var stream = token;
+            var handler = new JwtSecurityTokenHandler();
+            return handler.ReadToken(stream) as JwtSecurityToken;
         }
     }
 }

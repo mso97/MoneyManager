@@ -38,7 +38,7 @@ namespace MM.Infra.Data.Repository
             return id;
         }
 
-        public TEntity SelecionarPorId(int id)
+        public TEntity SelecionarPorId(Guid id)
         {
             return context.Set<TEntity>().Find(id);
         }

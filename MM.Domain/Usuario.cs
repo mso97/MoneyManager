@@ -29,7 +29,7 @@ namespace MM.Domain
             this.Senha = Senha;
         }
 
-        public void setDataCadastro()
+        public void SetDataCadastro()
         {
             this.DataCadastro = DateTime.Now;
         }
@@ -37,6 +37,12 @@ namespace MM.Domain
         public void SetRole(string Role)
         {
             this.Role = Role;
+        }
+
+        public void LimpaConsulta()
+        {
+            this.Senha = null;
+            this.Salt = null;
         }
     }
 }

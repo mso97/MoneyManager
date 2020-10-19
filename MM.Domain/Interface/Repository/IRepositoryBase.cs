@@ -8,6 +8,6 @@ namespace MM.Domain.Interface.Repository
         Guid Inserir(TEntity entity);
         void Excluir(TEntity entity);
         void Alterar(TEntity entity);
-        TEntity SelecionarPorId(int id);
+        TEntity SelecionarPorId(Guid id);
     }
 }
