@@ -21,13 +21,14 @@
                 <v-btn @click="submit" large depressed>CADASTRAR</v-btn>
             </div>
         </form>
+        <RequestHandling ref="requestHandling"/>
     </div>
 </template>
 
 <script>
-    import axios from 'axios'
     import { validationMixin } from 'vuelidate'
     import { required, maxLength, email, minLength } from 'vuelidate/lib/validators'
+    import RequestHandling from '../../@core/helpers/RequestHandling'
 
     export default {
         name: 'UsuarioInsert',
@@ -75,34 +76,14 @@
         methods: {
             submit () {
                 this.$v.$touch()
-                if(this.$v.$error) return
+                if(this.$v.$error) return;
 
-                axios.post('usuario', this.$data)
-                    .then(response => {
-                        this.responseSubmit(response);
-                    })
-                    .catch(response => {
-                        this.responseSubmit(response);
-                    });
-            },
-
-            responseSubmit(response) {
-                if (response != null){
-                    if (response.data != null) {
-                        this.$toast.success("Cadastro realizado");
-                    }
-                    else {
-                        if (response.error != null){
-                            response.error.forEach(element => {
-                                this.$toast.warning(element.errorMessage);
-                            });
-                        }
-                        else {
-                            this.$toast.error(response.message);
-                        }
-                    }
-                }
+                this.$refs.requestHandling.post('usuario', this.$data, null);
             }
+        },
+
+        components: {
+            RequestHandling
         }
     };
 </script>

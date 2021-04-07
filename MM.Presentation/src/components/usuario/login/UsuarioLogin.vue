@@ -16,13 +16,14 @@
                 <v-btn @click="submit" large depressed>ENTRAR</v-btn>
             </div>
         </form>
+        <RequestHandling ref="requestHandling"/>
     </div>
 </template>
 
 <script>
-    import axios from 'axios'
     import { validationMixin } from 'vuelidate'
     import { required, email } from 'vuelidate/lib/validators'
+    import RequestHandling from '../../@core/helpers/RequestHandling'
 
     export default {
         name: 'UsuarioLogin',
@@ -60,13 +61,7 @@
                 this.$v.$touch()
                 if(this.$v.$error) return
 
-                axios.post('login', this.$data)
-                    .then(response => {
-                        this.responseSubmit(response);
-                    })
-                    .catch(response => {
-                        this.responseSubmit(response);
-                    });
+                this.$refs.requestHandling.post('login', this.$data, this.responseSubmit);
             },
 
             responseSubmit(response) {
@@ -88,6 +83,10 @@
                     }
                 }
             }
+        },
+
+        components: {
+            RequestHandling
         }
     };
 </script>

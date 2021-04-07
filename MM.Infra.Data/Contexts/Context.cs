@@ -11,7 +11,7 @@ namespace MM.Infra.Data.Contexts
     {
         private string _connectionString = @"Data Source=(localdb)\MoneyManager;Initial Catalog=master;Integrated Security=True;Connect ";
 
-        public DbSet<Usuario> Usuarios { get; set; }
+        //public DbSet<Usuario> Usuarios { get; set; }
 
         public IDbContextTransaction Transaction { get; private set; }
 

@@ -3,7 +3,6 @@
         <div class="row">
             Usuário
         </div>
-        
         <form>
             <div class="row">
                 <v-text-field v-model="nome" label="Nome"
@@ -20,7 +19,7 @@
                     :error-messages="errorsEmail"
                     required class="col-sm-12 col-md-6">
                 </v-text-field>
-                <v-text-field v-model="dtNascimento" label="Data de Nascimento" class="col-sm-12 col-md-6" type="date">
+                <v-text-field v-model="dataNascimento" label="Data de Nascimento" class="col-sm-12 col-md-6" type="date">
                 </v-text-field>
             </div>
             <div class="row">
@@ -38,16 +37,17 @@
                 <v-btn @click="submit" large depressed>CADASTRAR</v-btn>
             </div>
         </form>
+        <RequestHandling ref="requestHandling"/>
     </div>
 </template>
 
 <script>
-    import axios from 'axios'
     import { validationMixin } from 'vuelidate'
     import { required, maxLength, email, minLength } from 'vuelidate/lib/validators'
+    import RequestHandling from '../../@core/helpers/RequestHandling'
 
     export default {
-        name: 'UsuarioInsert',
+        name: 'UsuarioGet',
 
         mixins: [validationMixin],
 
@@ -55,6 +55,10 @@
             nome: {required, maxLength: maxLength(50)},
             email: {required, maxLength: maxLength(100), email},
             senha: {required, maxLength: maxLength(50), minLength: minLength(6) }
+        },
+
+        mounted() {
+            this.$refs.requestHandling.get('usuario', this.responseSubmit);
         },
 
         computed: {
@@ -85,8 +89,12 @@
 
         data: () => ({
             nome: '',
+            apelido: '',
             email: '',
-            senha: ''
+            dataNascimento: '',
+            cpf: '',
+            telefone: '',
+            genero: '',
         }),
 
         methods: {
@@ -94,19 +102,19 @@
                 this.$v.$touch()
                 if(this.$v.$error) return
 
-                axios.post('usuario', this.$data)
-                    .then(response => {
-                        this.responseSubmit(response);
-                    })
-                    .catch(response => {
-                        this.responseSubmit(response);
-                    });
+                this.$refs.requestHandling.post('usuario', this.$data, this.responseSubmit);
             },
 
             responseSubmit(response) {
                 if (response != null){
                     if (response.data != null) {
-                        this.$toast.success("Cadastro realizado");
+                        this.$data.nome = response.data.nome;
+                        this.$data.apelido = response.data.apelido;
+                        this.$data.email = response.data.email;
+                        this.$data.dataNascimento = this.formatDate(response.data.dataNascimento);
+                        this.$data.cpf = response.data.cpf;
+                        this.$data.telefone = response.data.telefone;
+                        this.$data.genero = response.data.genero;
                     }
                     else {
                         if (response.error != null){
@@ -119,7 +127,16 @@
                         }
                     }
                 }
+            },
+
+            formatDate(date){
+                var data = new Date(date);
+                return (data.getFullYear() + "-" + ("0" + (data.getMonth() + 1)).slice(-2) + "-" + (data.getDate()));
             }
+        },
+
+        components: {
+            RequestHandling
         }
     };
 </script>
